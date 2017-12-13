@@ -72,13 +72,52 @@
           <p id="phonep">We'll send a text to verify your phone</p>
         </div>
         <div class="modal-footer text-center">
-        	<input type="submit" class="btn btn-default " id="button-modal" data-dismiss="modal">
+        	<input type="submit" class="btn btn-default " id="button-modal"  data-toggle="modal" data-target="#firstmodal">
           
         </div>
       </div>
       
     </div>
   </div>
+
+
+
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="firstmodal">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p id="cuerpo"></p>
+        </div>
+        <div class="modal-footer text-center">
+        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#secondmodal" data-dismiss="modal" id="button-modal">OK</button>
+        </div>
+    </div>
+  </div>
+</div>
+
+<!-- Segundo modal-->
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="secondmodal">
+  <div class="modal-dialog modal-sm" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+          
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>asdgsdfh</p>
+        </div>
+        <div class="modal-footer text-center">
+         <input type="submit" class="btn btn-default " id="button-modal"  data-toggle="modal" data-target=".bs-example-modal-sm">
+        </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- Scripts -->
 <script src="assets/intl-tel-input-12.1.0/build/js/intlTelInput.js"></script>
@@ -90,6 +129,11 @@
 
 <script src="assets/intl-tel-input-12.1.0/build/js/utils.js"></script>
 	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+
 	<script src="assets/JS/APP.JS"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 

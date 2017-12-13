@@ -26,9 +26,11 @@ $("#phone").intlTelInput();
 $(document).ready(function() {
      $('input[type="submit"]').prop('disabled', true);
      $('input[type="tel"]').keyup(function() {
-        if($(this).val().length >= 10) {
+        if($(this).val().length === 10) {
            $(':input[type="submit"]').prop('disabled', false)
-           
+ }
+  if($(this).val().length > 10) {
+           alert('Ingrese un teléfono válido de 10 dígitos')
  }
   })});
 
@@ -38,8 +40,9 @@ $('input[type="submit"]').click(function() {
   for (var i = 0; i < 3; i++) {
     code += str.charAt(Math.floor(Math.random() * str.length));
   }
-  alert('Tu código: LAB-' + code);
+  $('#cuerpo').text('Tu código: LAB-' + code);
 });
 
 $('input[type="tel"]').numeric();
+
 
