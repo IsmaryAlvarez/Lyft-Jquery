@@ -1,3 +1,4 @@
+var codevar='';
 /**
  * Función centrado de imagen en vista splash
  */
@@ -55,28 +56,43 @@ $(document).ready(function() {
 })});
 
 /**
+ * Comparación de inputs
+ */
+$('#codegeneration').keyup(function(){
+  if($(this).val() == codevar){
+    $('#hola').removeClass('disabled');
+  }
+})
+/**
+ * Validación del formulario
+ */
+$('#uLogin').keyup(function(){
+  if($(this).val() == codevar){
+    $('#hola').removeClass('disabled');
+  }
+})
+
+
+/**
  * Generación de código aleatorio
  */
 $('#button-modalnext').click(function() {
-  var code = "";
   var str = "123456789";
   for (var i = 0; i < 3; i++) {
-    code += str.charAt(Math.floor(Math.random() * str.length));
+    codevar += str.charAt(Math.floor(Math.random() * str.length));
   }
-  $('#cuerpo').text('Your code: LAB-' + code);
+  $('#cuerpo').text('Your code: LAB-' + codevar);
+  codevar='';
 });
-
 
 
 
 $('#resend').click(function() {
-  var codes = "";
-  var str = "123456789";
-  for (var i = 0; i < 3; i++) {
-    codes += str.charAt(Math.floor(Math.random() * str.length));
-  }
-  $('#cuerpo').text('Your code: LAB-' + codes);
+  $('#secondmodal').css('display', 'none');
+  $('#phone').val('')
 });
+
+
 
 /**
  * Validación de números
@@ -84,9 +100,11 @@ $('#resend').click(function() {
 
 $('input[type="tel"]').numeric();
 
-$('input[type="text"]').numeric();
+
 
 $(document).ready(function(){
+  $('#hola').addClass('disabled');
+  $('#final').addClass('disabled');
   $('.modal-footer button').click(function(){
     var button = $(this);
 
@@ -139,3 +157,11 @@ $(document).ready(function(){
   });
 });
 
+
+$('#final').click(function(){
+  $('#ok').css('display', 'block');
+  $('.botones').css('display', 'none');
+  $('.modal fade').css('display', 'none');
+  $('#myModal2').css('display', 'none');
+  
+})

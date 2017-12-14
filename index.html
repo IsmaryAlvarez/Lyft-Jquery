@@ -38,7 +38,7 @@
 	</div>
 
 	<!-- Header app -->
-	<header>
+	<header class="botones">
 		<div class="container text-center">
 			<div class="row">
 				<div class="col-sm-12 col-xs-12" id="logo">
@@ -48,7 +48,7 @@
 		</div>
 	</header>
 
-	<section>
+	<section class="botones">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-xs-12 text-center" id="logocenter">
@@ -94,7 +94,7 @@
 
 	<!-- Modal Con Código generado -->
 	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="firstmodal">
-		<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-dialog modal-sm" role="document" id="showmodal">
 			<div class="modal-content">
 				<div class="modal-header">
 					<h4 class="modal-title">Automatic Code Generation</h4>
@@ -119,14 +119,14 @@
 				</div>
 				<div class="modal-body">
 					<label>LAB-</label>
-					<input input type="text" placeholder="XXX" id="codegeneration">
+					<input input type="tel" placeholder="XXX" id="codegeneration">
 					<p>Enter the code sent to your phone...</p>
 					<div class="text-center">
-						<button class="btn btn-default" data-toggle="modal" id="resend" >Resend Code</button>
+						<button class="btn btn-default" data-toggle="modal" data-target="#myModal" id="resend" >Resend Code</button>
 					</div>
 				</div>
 				<div class="modal-footer text-center">
-					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal2" data-dismiss="modal" id="button-modal">OK</button>
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal2" data-dismiss="modal" id="hola">OK</button>
 				</div>
 			</div>
 		</div>
@@ -166,21 +166,30 @@
 							<label>
 								<input type="checkbox"> I agree to Lyft's <a href="">Terms of Services</a>
 							</label>
-						</div> <!-- /.checkbox -->
+						</div> 
 					</form>
 
-				</div> <!-- /.modal-body -->
+				</div> 
 
 				<div class="modal-footer">
 					<button class="btn btn-primary" id="final">Ok</button>
 
 					
-				</div> <!-- /.modal-footer -->
+				</div> 
 
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+			</div>
+		</div>
+	</div>
 
+	<!-- Final Screen-->
+	<section class="container" id="ok">
+		<div class="row">
+			<div class="col-xs-12 col-sm-12">
+				<img src="assets/IMAGES/logo-white.png" alt="logo-white">
+				<p><i class="fa fa-check-circle" aria-hidden="true"></i></p>
+			</div>
+		</div>
+	</section>
 	
 	<!-- Script banderas-->
 	<script src="assets/intl-tel-input-12.1.0/build/js/intlTelInput.js"></script>
