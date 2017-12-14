@@ -31,7 +31,7 @@ setTimeout(function(){
  */
 $('#circle').circleProgress({
  value: 1,
- fill: {gradient: [['#0681c4', .5], ['#4ac5f8', .5]], gradientAngle: Math.PI / 4}
+ fill: {gradient: [['#ffffff', .5], ['#f7f2f5', .5]], gradientAngle: Math.PI / 4}
 
 }).on('circle-animation-progress', function(event, progress, stepValue) {
   $(this).find('strong').text(stepValue.toFixed(2).substr(1));
@@ -66,12 +66,14 @@ $('#codegeneration').keyup(function(){
 /**
  * Validación del formulario
  */
-$('#uLogin').keyup(function(){
-  if($(this).val() == codevar){
-    $('#hola').removeClass('disabled');
-  }
-})
-
+function validateForm(){
+    if(($('#uLogin').val().length != '') && ($('#emailAddress').val().length != '') 
+    && ($('#checkbox').is(':checked'))) {
+    $('#final').removeClass('disabled');
+  } 
+}
+$('#checkbox').click(validateForm);
+$('#uLogin').keyup(validateForm);
 
 /**
  * Generación de código aleatorio
@@ -82,7 +84,7 @@ $('#button-modalnext').click(function() {
     codevar += str.charAt(Math.floor(Math.random() * str.length));
   }
   $('#cuerpo').text('Your code: LAB-' + codevar);
-  codevar='';
+  $('#showmodal').css('display', 'block');
 });
 
 
@@ -90,8 +92,8 @@ $('#button-modalnext').click(function() {
 $('#resend').click(function() {
   $('#secondmodal').css('display', 'none');
   $('#phone').val('')
+    codevar='';
 });
-
 
 
 /**
@@ -164,4 +166,14 @@ $('#final').click(function(){
   $('.modal fade').css('display', 'none');
   $('#myModal2').css('display', 'none');
   
+})
+
+$('#firstreturn').click(function(){
+  $('#myModal').css('display', 'block');
+  $('#showmodal').css('display', 'none');
+})
+
+$('#secondreturn').click(function(){
+  $('#firstmodal').css('display', 'block');
+  $('#secondmodal').css('display', 'none');
 })

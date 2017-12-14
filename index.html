@@ -28,6 +28,9 @@
 
 	<!-- Script de Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
 </head>
 
 <body>
@@ -52,7 +55,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12 col-xs-12 text-center" id="logocenter">
-					<img src="assets/IMAGES/logo-pink.png" alt="">
+					<img src="assets/IMAGES/lyft-lyfe.svg" alt="">
 				</div>
 			</div>
 		</div>
@@ -97,6 +100,7 @@
 		<div class="modal-dialog modal-sm" role="document" id="showmodal">
 			<div class="modal-content">
 				<div class="modal-header">
+					<button type="button" class="return" id="firstreturn" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-double-left" aria-hidden="true"></i></button>
 					<h4 class="modal-title">Automatic Code Generation</h4>
 				</div>
 				<div class="modal-body">
@@ -114,6 +118,7 @@
 		<div class="modal-dialog modal-sm" role="document">
 			<div class="modal-content">
 				<div class="modal-header  text-center">
+					<button type="button" class="return" id="secondreturn" data-toggle="modal" data-target="#firstmodal"><i class="fa fa-angle-double-left" aria-hidden="true"></i></button>
 					<h4 class="modal-title">Verify phone number</h4>
 					<p>Join now for free ride credit</p>
 				</div>
@@ -164,7 +169,7 @@
 
 						<div class="checkbox">
 							<label>
-								<input type="checkbox"> I agree to Lyft's <a href="">Terms of Services</a>
+								<input type="checkbox" id="checkbox"> I agree to Lyft's <a href="">Terms of Services</a>
 							</label>
 						</div> 
 					</form>
@@ -191,6 +196,7 @@
 		</div>
 	</section>
 	
+
 	<!-- Script banderas-->
 	<script src="assets/intl-tel-input-12.1.0/build/js/intlTelInput.js"></script>
 
