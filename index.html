@@ -2,141 +2,203 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-	<title>Lyft</title>
-		<!-- Icono de Pestaña -->
 
+	<!-- Resposive-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+	<title>Lyft</title>
+
+	<!-- Icono de Pestaña -->
 	<link rel="shortcut icon" type="image/png" href="assets/IMAGES/imagen-logo.png">
 
+	<!-- Link de Fuentes -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,900" rel="stylesheet">
 
+	<!-- Link Bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+	<!-- Link de CSS -->
 	<link rel="stylesheet" href="assets/CSS/STYLE.CSS">
 
-	<!--link rel="stylesheet" href="path/to/intlTelInput.css"-->
+	<!-- Link de stilos modal banderas -->
 	<link rel="stylesheet" href="assets/intl-tel-input-12.1.0/build/css/intlTelInput.css">
 
 	<!-- Iconos -->
 	<link rel="stylesheet" href="assets/font-awesome-4.7.0/css/font-awesome.min.css">
+
+	<!-- Script de Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
-<!-- Splash Image -->
+	<!-- Splash Image -->
 	<div id="overlay">
-  	<div id="overlay-content"><img src="assets/IMAGES/logo-white.png" alt=""></div>
+		<div id="overlay-content"><img src="assets/IMAGES/logo-white.png" alt="logo blanco">				<div id="circle"></div>
+		</div>
 	</div>
 
+	<!-- Header app -->
 	<header>
-	<div class="container text-center">
-		<div class="row">
-			<div class="col-sm-12 col-xs-12" id="logo">
-				<h2><img src="assets/IMAGES/logo-white.png" alt=""></h2>
+		<div class="container text-center">
+			<div class="row">
+				<div class="col-sm-12 col-xs-12" id="logo">
+					<h2><img src="assets/IMAGES/logo-white.png" alt="logo-white"></h2>
+				</div>
 			</div>
 		</div>
 	</header>
 
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 col-xs-12 text-center" id="logocenter">
-			<img src="assets/IMAGES/logo-pink.png" alt="">
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-xs-12 text-center" id="logocenter">
+					<img src="assets/IMAGES/logo-pink.png" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 col-xs-12 text-center">
+					<button type="button" class="btn btn-default">Login</button>
+
+					<button type="button" class="btn btn-default" id="singup" data-toggle="modal" data-target="#myModal" href>Sing Up</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Fomulario Sing Up -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content text-center">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><i class="fa fa-angle-double-left" aria-hidden="true"></i></button>
+					<h2 class="modal-title">Sing Up</h2>
+					<p id="modalp">Join now the free ride credit</p>
+				</div>
+				<div class="modal-body">
+					<input type="tel" id="phone">
+					<br>
+					<p id="phonep">We'll send a text to verify your phone</p>
+				</div>
+				<div class="modal-footer text-center">
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#firstmodal" data-dismiss="modal" id="button-modalnext">NEXT</button>
+				</div>
+			</div>
+
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12 col-xs-12 text-center">
-				<button type="button" class="btn btn-default">Login</button>
-
-				<button type="button" class="btn btn-default" id="singup" data-toggle="modal" data-target="#myModal">Sing Up</button>
+	<!-- Modal Con Código generado -->
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="firstmodal">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Automatic Code Generation</h4>
+				</div>
+				<div class="modal-body">
+					<p id="cuerpo"></p>
+				</div>
+				<div class="modal-footer text-center">
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#secondmodal" data-dismiss="modal" id="button-modal">OK</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</section>
 
-<!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content text-center">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h2 class="modal-title">Sing Up</h2>
-          <p id="modalp">Join now the free ride credit</p>
-        </div>
-        <div class="modal-body">
-          <input type="tel" id="phone">
-          <br>
-          <p id="phonep">We'll send a text to verify your phone</p>
-        </div>
-        <div class="modal-footer text-center">
-        	<input type="submit" class="btn btn-default " id="button-modal"  data-toggle="modal" data-target="#firstmodal">
-          
-        </div>
-      </div>
-      
-    </div>
-  </div>
+	<!-- Modal para verificar código-->
+	<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="secondmodal">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header  text-center">
+					<h4 class="modal-title">Verify phone number</h4>
+					<p>Join now for free ride credit</p>
+				</div>
+				<div class="modal-body">
+					<label>LAB-</label>
+					<input input type="text" placeholder="XXX" id="codegeneration">
+					<p>Enter the code sent to your phone...</p>
+					<div class="text-center">
+						<button class="btn btn-default" data-toggle="modal" id="resend" >Resend Code</button>
+					</div>
+				</div>
+				<div class="modal-footer text-center">
+					<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal2" data-dismiss="modal" id="button-modal">OK</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<!-- Modal final sing up-->
+	<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
 
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h4 class="modal-title" id="myModalLabel">Sing Up</h4>
+					<p>Join Now for free ride credit</p>
+				</div> 
 
+				<div class="modal-body">
+					<form role="form">
+						<div class="form-group">
+							<div class="input-group">
+								<label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+								<input type="text" class="form-control" id="uLogin" placeholder="First Name">
+								<input type="text" class="form-control" id="uLogin" placeholder="Last Name">
+										
+							</div>
+						</div> 
 
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="firstmodal">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-          
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p id="cuerpo"></p>
-        </div>
-        <div class="modal-footer text-center">
-        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#secondmodal" data-dismiss="modal" id="button-modal">OK</button>
-        </div>
-    </div>
-  </div>
-</div>
+						<div class="form-group">
+							<div class="input-group">
+							<label for="uPassword" class="input-group-addon glyphicon glyphicon-envelope""></label>
+								<input id="emailAddress" type="email" class="form-control" id="uPassword" placeholder="Email">
+										
+							</div> 
+						</div> 
 
-<!-- Segundo modal-->
-<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="secondmodal">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-          
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>asdgsdfh</p>
-        </div>
-        <div class="modal-footer text-center">
-         <input type="submit" class="btn btn-default " id="button-modal"  data-toggle="modal" data-target=".bs-example-modal-sm">
-        </div>
-    </div>
-  </div>
-</div>
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> I agree to Lyft's <a href="">Terms of Services</a>
+							</label>
+						</div> <!-- /.checkbox -->
+					</form>
 
+				</div> <!-- /.modal-body -->
 
-<!-- Scripts -->
-<script src="assets/intl-tel-input-12.1.0/build/js/intlTelInput.js"></script>
+				<div class="modal-footer">
+					<button class="btn btn-primary" id="final">Ok</button>
 
+					
+				</div> <!-- /.modal-footer -->
 
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
-<script type="text/javascript" src="assets/jquery.numeric.js"></script>
+	
+	<!-- Script banderas-->
+	<script src="assets/intl-tel-input-12.1.0/build/js/intlTelInput.js"></script>
 
+	<!-- Script circulo de progreso-->
+	<script src="assets/jquery-circle-progress-1.2.2/dist/circle-progress.js"></script>
 
-<script src="assets/intl-tel-input-12.1.0/build/js/utils.js"></script>
-	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- Script validador de números-->
+	<script type="text/javascript" src="assets/jquery.numeric.js"></script>
 
+	<!-- Script banderas-->
+	<script src="assets/intl-tel-input-12.1.0/build/js/utils.js"></script>
 
+	<!-- Script bootstrap-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-
-
+	<!-- Script js-->
 	<script src="assets/JS/APP.JS"></script>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-
-
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 </body>
 </html>
